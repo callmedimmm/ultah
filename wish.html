@@ -5,19 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Birthday</title>
-    <link rel="stylesheet" href="./package/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
-  
-  <body<button onclick="playMusic()">Start Music</button>
+
+  <body>
+    <button onclick="playMusic()">Start Music</button>
     <script>
       function playMusic() {
         if (!window.musicPlayer || window.musicPlayer.closed) {
           window.musicPlayer = window.open("music.html", "musicWindow", "width=0,height=0");
         }
       }
+
+      // Autoplay saat halaman dibuka
+      window.onload = () => {
+        if (!window.musicPlayer || window.musicPlayer.closed) {
+          window.musicPlayer = window.open("music.html", "musicWindow", "width=0,height=0");
+        }
+      };
     </script>
-    
+
     <div class="mainWish">
       <div class="wishHead">
         <h1>
@@ -28,8 +36,8 @@
         <div class="wish">
           <h2>- Wish <span class="active2"> for you</span></h2>
           <p>
-            Special umur 17, saya mengucapkan selamat legal kepada Yth. Ibu Dilaa semoga panjang umur sehat selalu, <span class="active"> "jangan takut mulai sesuatu dan tetep konsisten.</span> Inget siklus hidup pemuda nyeni  "don listen to them,ojk di rungokno" 
-            ojk kakean velocity ,sering sering ngaji koyo aku ben iso sampe tuek"<span class="active"> If You Try, And Fail, Congratulations, Most People Won't Even Try</span>. So tetep semangat🤜"
+            Special umur 17, saya mengucapkan selamat legal kepada Yth. Ibu Dilaa semoga panjang umur sehat selalu, <span class="active"> "jangan takut mulai sesuatu dan tetep konsisten.</span> Inget siklus hidup pemuda nyeni  "don listen to them, ojk di rungokno" 
+            ojk kakean velocity, sering sering ngaji koyo aku ben iso sampe tuek"<span class="active"> If You Try, And Fail, Congratulations, Most People Won't Even Try</span>. So tetep semangat🤜"
           </p>
         </div>
         <div class="goals">
@@ -48,39 +56,31 @@
       <div class="slider-container">
         <div class="slider">
           <div class="slide s1">
-            <img src="./package/img/foto1.jpeg" alt="" />
+            <img src="img/foto1.jpeg" alt="" />
           </div>
           <div class="slide s2">
-            <img src="./package/img/foto 2.jpeg" alt="" />
+            <img src="img/foto2.jpeg" alt="" />
           </div>
           <div class="slide s3">
-            <img src="./package/img/foto 3.jpeg" alt="" />
+            <img src="img/foto3.jpeg" alt="" />
           </div>
           <div class="slide s4">
-            <img src="./package/img/foto 4.jpeg" alt="" />
+            <img src="img/foto4.jpeg" alt="" />
           </div>
           <div class="slide s5">
-            <img src="./package/img/foto1.jpeg" alt="" />
+            <img src="img/foto1.jpeg" alt="" />
           </div>
           <div class="slide s6">
-            <img src="./package/img/foto 3.jpeg" alt="" />
+            <img src="img/foto3.jpeg" alt="" />
           </div>
         </div>
       </div>
     </div>
 
-    <script src="./package/js/script.js"></script>
+    <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
-    <script>
-      // Buka popup player kalau belum dibuka
-      if (!window.musicPlayer || window.musicPlayer.closed) {
-        window.musicPlayer = window.open("music.html", "musicWindow", "width=0,height=0");
-      }
-    </script>
   </body>
-  <iframe src="music.html" style="display: none;" allow="autoplay"></iframe>
-
 </html>

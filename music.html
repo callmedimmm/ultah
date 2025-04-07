@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Player</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+    }
+
+    #playBtn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 18px;
+      font-size: 14px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      background-color: #22c55e; /* Hijau awal */
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 9999;
+    }
+
+    #playBtn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgMusic" loop>
+    <source src="./package/music/nina.mp3" type="audio/mp3" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <button onclick="toggleMusic()" id="playBtn">Start Music</button>
+
+  <script>
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("playBtn");
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        btn.innerText = "Pause Music";
+        btn.style.backgroundColor = "#ef4444"; // Merah
+      } else {
+        music.pause();
+        btn.innerText = "Start Music";
+        btn.style.backgroundColor = "#22c55e"; // Hijau
+      }
+    }
+
+    // Auto play saat halaman dibuka
+    window.onload = () => {
+      music.play().then(() => {
+        btn.innerText = "Pause Music";
+        btn.style.backgroundColor = "#ef4444";
+      }).catch(() => {
+        btn.innerText = "Start Music";
+        btn.style.backgroundColor = "#22c55e";
+        console.log("Autoplay blocked. User must click play.");
+      });
+    };
+  </script>
+</body>
+</html>

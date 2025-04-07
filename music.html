@@ -20,7 +20,7 @@
       border: none;
       border-radius: 8px;
       color: white;
-      background-color: #22c55e; /* Hijau awal */
+      background-color: #22c55e;
       cursor: pointer;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       transition: background-color 0.3s ease, transform 0.2s ease;
@@ -34,7 +34,7 @@
 </head>
 <body>
   <audio id="bgMusic" loop>
-    <source src="./package/music/nina.mp3" type="audio/mp3" />
+    <source src="music/nina.mp3" type="audio/mp3" />
     Your browser does not support the audio element.
   </audio>
 
@@ -48,15 +48,14 @@
       if (music.paused) {
         music.play();
         btn.innerText = "Pause Music";
-        btn.style.backgroundColor = "#ef4444"; // Merah
+        btn.style.backgroundColor = "#ef4444";
       } else {
         music.pause();
         btn.innerText = "Start Music";
-        btn.style.backgroundColor = "#22c55e"; // Hijau
+        btn.style.backgroundColor = "#22c55e";
       }
     }
 
-    // Auto play saat halaman dibuka
     window.onload = () => {
       music.play().then(() => {
         btn.innerText = "Pause Music";
